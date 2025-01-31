@@ -17,8 +17,9 @@ image_paths = [
     r"D:\Semester - III\Python\Python GUI\Images\8.jpg"
 ]
 
-# Create a list to store resized images
+# Create a list to store resized images and labels
 photos = []
+labels = []
 
 # Resize images and store them in the list
 for path in image_paths:
@@ -27,7 +28,8 @@ for path in image_paths:
     photos.append(ImageTk.PhotoImage(img_resized))
 
 # Create labels with resized images
-labels = [tk.Label(image=photo) for photo in photos]
+for photo in photos:
+    labels.append(tk.Label(image=photo))
 
 # Pack the labels
 for label in labels:
